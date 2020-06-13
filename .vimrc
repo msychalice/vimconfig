@@ -82,7 +82,7 @@ Plug 'https://github.com/yegappan/grep.git'
 Plug 'https://github.com/Yggdroot/LeaderF.git', { 'do': './install.sh' }    " On Linux
 "Plug 'https://github.com/Yggdroot/LeaderF.git', { 'do': '.\install.bat' }    " On Windows
 Plug 'https://github.com/dense-analysis/ale.git'
-"Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " For golan
+Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' } 
 
 " Initialize plugin system
 call plug#end()
@@ -317,7 +317,7 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <silent> <f2> :tabprev<cr>
 map <silent> <f3> :tabnext<cr>
-map <silent> <Leader><C-]> <C-w><C-]><C-w>T
+nnoremap <silent> <Leader><C-]> <C-w><C-]><C-w>T
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -334,8 +334,8 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Specify the behavior when switching between buffers
 try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
+ set switchbuf=useopen,usetab,newtab
+ set stal=2
 catch
 endtry
 
@@ -647,3 +647,11 @@ let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 " codedark color theme
 let g:airline_theme = 'one'
 
+" vim-go
+au FileType go nmap <Leader>s <Plug>(go-def-split)
+au FileType go nmap <Leader>v <Plug>(go-def-vertical)
+au FileType go nmap <Leader><C-]> <Plug>(go-def-tab)<C-w>T
+au FileType go nmap <leader>r <Plug>(go-run)  " Run current file only  :GoRun % 
+au FileType go nmap <leader>b <Plug>(go-build) 
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
