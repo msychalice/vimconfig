@@ -1,4 +1,10 @@
-1. Install vim8
+1. Install vim8.2 with unofficial package
+```
+sudo add-apt-repository ppa:jonathonf/vim   
+sudo apt update
+sudo apt install vim
+
+```
 2. Install python3 for YouCompleteMe
 ```
     sudo apt-get install build-essential cmake python-dev python3-dev

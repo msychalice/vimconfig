@@ -82,6 +82,7 @@ Plug 'https://github.com/yegappan/grep.git'
 Plug 'https://github.com/Yggdroot/LeaderF.git', { 'do': './install.sh' }    " On Linux
 "Plug 'https://github.com/Yggdroot/LeaderF.git', { 'do': '.\install.bat' }    " On Windows
 Plug 'https://github.com/dense-analysis/ale.git'
+"Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " For golan
 
 " Initialize plugin system
 call plug#end()
@@ -316,6 +317,7 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <silent> <f2> :tabprev<cr>
 map <silent> <f3> :tabnext<cr>
+map <silent> <Leader><C-]> <C-w><C-]><C-w>T
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
