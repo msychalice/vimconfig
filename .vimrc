@@ -73,6 +73,7 @@ Plug 'https://github.com/ludovicchabant/vim-gutentags.git'
 Plug 'https://github.com/octol/vim-cpp-enhanced-highlight.git'
 Plug 'https://github.com/tomasiser/vim-code-dark.git'
 Plug 'https://github.com/haishanh/night-owl.vim.git'
+Plug 'https://github.com/KeitaNakamura/neodark.vim'
 Plug 'https://github.com/rakr/vim-one.git'
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 Plug 'https://github.com/derekwyatt/vim-fswitch'
@@ -225,6 +226,7 @@ try
     colorscheme one
     "colorscheme night-owl
     "colorscheme codedark
+    "colorscheme neodark
 catch
 endtry
 
@@ -387,6 +389,10 @@ endfun
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
+
+" Paste the latest yanked text
+map <leader>p "0p
+map <leader>P "0P
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -650,8 +656,16 @@ let g:airline_theme = 'one'
 " vim-go
 au FileType go nmap <Leader>s <Plug>(go-def-split)
 au FileType go nmap <Leader>v <Plug>(go-def-vertical)
-au FileType go nmap <Leader><C-]> <Plug>(go-def-tab)<C-w>T
+au FileType go nmap <Leader><C-]> <Plug>(go-def-tab)<C-w>T<CR>
 au FileType go nmap <leader>r <Plug>(go-run)  " Run current file only  :GoRun % 
 au FileType go nmap <leader>b <Plug>(go-build) 
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_generate_tags = 1
