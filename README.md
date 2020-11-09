@@ -48,6 +48,17 @@ sudo ln -s clang-format-11 clang-format
 sudo ln -s clang-format-diff-11 clang-format-diff
 ```
 
+Generate .clang-format and save it at user home directory.
+```
+clang-format -style=google -dump-config > ~/.clang-format
+```
+
+Change following fields of the .clang-format
+```
+AccessModifierOffset: -4
+IndentWidth:   4
+```
+
 ## Extra links
 ### [Using Vim to write C++ on Linux](https://www.zhihu.com/question/47691414)
 ### [install vim8 on Ubuntu16](https://blog.csdn.net/oaix101125/article/details/85019942)
