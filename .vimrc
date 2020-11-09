@@ -657,7 +657,8 @@ let g:airline_theme = 'one'
 au FileType go nmap <Leader>s <Plug>(go-def-split)
 au FileType go nmap <Leader>v <Plug>(go-def-vertical)
 au FileType go nmap <Leader><C-]> <Plug>(go-def-tab)<C-w>T<CR>
-au FileType go nmap <leader>r <Plug>(go-run)  " Run current file only  :GoRun % 
+au FileType go nmap <leader>R <Plug>(go-run)  " Run current file only  :GoRun %
+au FileType go nmap <leader>r :GoRun %<cr>
 au FileType go nmap <leader>b <Plug>(go-build) 
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
@@ -669,3 +670,10 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_generate_tags = 1
+
+" clang-format
+function! Formatonsave()
+  let l:formatdiff = 1
+  py3f /usr/share/clang/clang-format-11/clang-format.py
+endfunction
+autocmd BufWritePre *.h,*.hpp,*.cc,*.cpp call Formatonsave()

@@ -22,10 +22,36 @@ sudo apt install vim
 sudo apt update && sudo apt -y install font-manager
 ```
 
+7. Install Clang
+Add following lines into /etc/apt/sources.list
+```
+deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main
+deb-src http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main
+```
 
+Run following commands
+```
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
+sudo apt update
+sudo apt install clang-11 lldb-11 lld-11
+sudo apt install libc++-11-dev libc++abi-11-dev
+cd /usr/bin
+sudo ln -s clang-11 clang
+sudo ln -s clang++-11 clang++
+```
+
+8. Install ClangFormat
+```
+sudo apt install clang-format-11
+cd /usr/bin
+sudo ln -s clang-format-11 clang-format
+sudo ln -s clang-format-diff-11 clang-format-diff
+```
 
 ## Extra links
 ### [Using Vim to write C++ on Linux](https://www.zhihu.com/question/47691414)
 ### [install vim8 on Ubuntu16](https://blog.csdn.net/oaix101125/article/details/85019942)
 ### [install GTags](https://zhuanlan.zhihu.com/p/36279445)
+### [ClangFormat](http://clang.llvm.org/docs/ClangFormat.html)
+
 
