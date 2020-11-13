@@ -57,6 +57,13 @@ Change following fields of the .clang-format
 ```
 AccessModifierOffset: -4
 IndentWidth:   4
+
+AllowShortEnumsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: None
+AllowShortLambdasOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
 ```
 
 ## Extra links
