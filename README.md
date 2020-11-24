@@ -64,6 +64,7 @@ AllowShortFunctionsOnASingleLine: None
 AllowShortLambdasOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLoopsOnASingleLine: false
+DerivePointerAlignment: false
 ```
 
 ## Extra links
