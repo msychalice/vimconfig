@@ -1,0 +1,42 @@
+" VS 2017 or later is required
+" Show line number
+set nu
+set rnu
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Use spaces instead of tabs
+set expandtab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+set ai "Auto indent
+set wrap "Wrap lines
+
+" Useful mappings for managing tabs
+map <leader>to :tabonly<cr>
+map <leader>tc :vsc Window.CloseDocumentWindow<cr>
+map <silent> <f2> :tabprev<cr>
+map <silent> <f3> :tabnext<cr>
+
+" Go to recent file
+nnoremap <C-n> :vsc Edit.GoToRecentFile<CR>
+
+" Go to file
+nnoremap <C-p> :vsc Edit.GoToFile<CR>
