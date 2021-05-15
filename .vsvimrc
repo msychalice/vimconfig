@@ -35,6 +35,13 @@ map <leader>tc :vsc Window.CloseDocumentWindow<cr>
 map <silent> <f2> :tabprev<cr>
 map <silent> <f3> :tabnext<cr>
 
+" Toggle header/source file
+map <leader>f :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<cr>
+
+" Backward/Forward
+map <C-o> :vsc View.NavigateBackward<cr>
+map <C-i> :vsc View.NavigateForward<cr>
+
 " Go to recent file
 nnoremap <C-n> :vsc Edit.GoToRecentFile<CR>
 
