@@ -85,6 +85,7 @@ Plug 'https://github.com/Yggdroot/LeaderF.git', { 'do': './install.sh' }    " On
 Plug 'https://github.com/dense-analysis/ale.git'
 Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' } 
 Plug 'https://github.com/davidhalter/jedi-vim.git'
+Plug 'https://github.com/tell-k/vim-autopep8'
 
 " Initialize plugin system
 call plug#end()
@@ -690,3 +691,16 @@ function! Formatonsave()
   py3f /usr/share/clang/clang-format-11/clang-format.py
 endfunction
 autocmd BufWritePre *.h,*.hpp,*.cc,*.cpp call Formatonsave()
+
+" autopep8
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+" Automatically format every time saving a file.
+let g:autopep8_on_save = 0
+" Disable show diff window
+let g:autopep8_disable_show_diff=1
+
+
+" Run python F5
+autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+

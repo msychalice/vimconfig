@@ -16,11 +16,19 @@ sudo make distclean
 sudo ./configure --enable-optimizations --enable-shared
 sudo make altinstall
 ```
-Also remember to add library path into bash environment.
-```
-vi ~/.bashrc
-export LD_LIBRARY_PATH=/usr/local/lib
-```
+Also remember to add library path into bash environment. There are two ways to do this.
+    a) add it in the .bashrc or .bash_profile, this only affects the current user
+    ```
+    vi ~/.bashrc
+    export LD_LIBRARY_PATH=/usr/local/lib
+    ```
+
+    b) add it in system. We can add a custom .conf file to /etc/ld.so.conf.d and add /usr/local/lib into that file.Normally /usr/local/lib is already there and there is no need to edit or create any file, just run
+    ```
+    sudo ldconfig
+    ```
+    For other directory, we can add a custom .conf file to /etc/ld.so.conf.d, add the library path into that file and run "sudo ldconfig"
+
 
 3. Install [vim-plug](https://github.com/junegunn/vim-plug)
 4. Copy the vimrc file and install all the plugins.
