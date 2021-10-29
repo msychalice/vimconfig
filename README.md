@@ -9,6 +9,19 @@ sudo apt install vim
 ```
     sudo apt-get install build-essential cmake python-dev python3-dev
 ```
+Note. if we want to upgrade Python and install it from source, follow these steps
+```
+cd <python_source_root_path>
+sudo make distclean
+sudo ./configure --enable-optimizations --enable-shared
+sudo make altinstall
+```
+Also remember to add library path into bash environment.
+```
+vi ~/.bashrc
+export LD_LIBRARY_PATH=/usr/local/lib
+```
+
 3. Install [vim-plug](https://github.com/junegunn/vim-plug)
 4. Copy the vimrc file and install all the plugins.
 5. Config YouCompleteMe server for C/C++ and Go

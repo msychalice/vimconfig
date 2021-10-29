@@ -84,6 +84,7 @@ Plug 'https://github.com/Yggdroot/LeaderF.git', { 'do': './install.sh' }    " On
 "Plug 'https://github.com/Yggdroot/LeaderF.git', { 'do': '.\install.bat' }    " On Windows
 Plug 'https://github.com/dense-analysis/ale.git'
 Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' } 
+Plug 'https://github.com/davidhalter/jedi-vim.git'
 
 " Initialize plugin system
 call plug#end()
@@ -647,6 +648,18 @@ hi! SpellRare gui=undercurl guisp=magenta
 
 " YCM YouCompleteMe
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+
+
+
+" jedi-vim default settings
+" Completion <C-Space>
+" Goto assignment <leader>g (typical goto function)
+" Goto definition <leader>d (follow identifier as far as possible, includes imports and statements)
+" Goto (typing) stub <leader>s
+" Show Documentation/Pydoc K (shows a popup with assignments)
+" Renaming <leader>r
+" Usages <leader>n (shows all the usages of a name)
+" Open module, e.g. :Pyimport os (opens the os module)
 
 
 
