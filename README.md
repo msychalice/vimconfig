@@ -16,7 +16,9 @@ sudo make distclean
 sudo ./configure --enable-optimizations --enable-shared
 sudo make altinstall
 ```
+
 Also remember to add library path into bash environment. There are two ways to do this.
+
     1) add it in the .bashrc or .bash_profile, this only affects the current user
     ```
     vi ~/.bashrc
